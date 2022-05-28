@@ -8,16 +8,28 @@
 #include"Square.h"
 #include"Circle.h"
 #include"Triangle.h"
-
+#include"SetOfShapes.h"
 
 int main()
 {
-	/*
-	TLine<float> line;
-	line.Print();
-	line.Plot();
-	*/
+	TSet<int> set;
 
+	/*TLine<int> line1;
+	TLine<int> line2;*/
+
+	//TLine<int> line;
+	//TSquare<int> A();
+	//TCircle<int>A(4);
+	TCircle<int>A(5);
+	TCircle<int>B(5);
+	TCircle<int>C(5);
+	set.SetObj(&A);
+	set.SetObj(&B);
+	set.SetObj(&C);
+	std::cout<<std::endl;
+	set.ToPlot(3);
+	
+	
 	//TSquare<int> square;
 	////square.Plot();
 
@@ -26,8 +38,6 @@ int main()
 	//circle.Print();
 	//circle.Plot();
 
-	TTrinagle<int> tri;
-	tri.Plot();
 
 
 

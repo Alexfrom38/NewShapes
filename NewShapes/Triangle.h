@@ -6,8 +6,9 @@ class TTrinagle : public TObj<Type>
 	TVector<Type> FirstPoint, SecondPoint, ThirdPoint;
 	int dim;
 	TString name;
-	Printer<Type> printer;
+	
 public:
+	Printer<Type> printer;
 	TTrinagle();
 	TTrinagle(const TTrinagle<Type>& q);
 	~TTrinagle();

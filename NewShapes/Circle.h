@@ -2,15 +2,16 @@
 #include "TObj.h"
 
 template <class Type>
-class TCircle
+class TCircle : public TObj<Type>
 {
-private:
+protected:
 	TVector<Type> point;
 	Type radius;
 	int dim;
 	TString name;
-	Printer<Type> printer;
+
 public:
+	Printer<Type> printer;
 	Type x, y, r;
 	TCircle(Type _radius);
 	TCircle(const TCircle<Type>& _circle);
@@ -55,9 +56,10 @@ inline TCircle<Type>::~TCircle()
 template<class Type>
 inline void TCircle<Type>::Print()
 {
+	std::cout << std::endl;
 	std::cout << "dim =" << dim << std::endl;
 	std::cout <<"Coordinates: "<< point << std::endl;
-	std::cout << "name = "<<name << std::endl;
+	std::cout << "name = "<<name;
 	std::cout << "radius = " << radius << std::endl;
 }
 

@@ -12,15 +12,14 @@ protected:
 	TString name;
 	TVector<Type> Vec;
 	int dim;
-	TPoint(int _dim);
+public:
+	Printer<Type> printer;
+	TPoint();
 	~TPoint();
 	TPoint(const TPoint<Type>& _point);
-	Printer<Type> printer;
-public:
 	virtual void Plot();
 	virtual void Print();
 	virtual TVector<Type>& operator [](int i);
-
 	virtual int GetDim();
 	virtual void SetName(const TString& _name);
 	virtual TString& GetName();
@@ -28,12 +27,13 @@ public:
 };
 
 template<class Type>
-TPoint<Type>::TPoint(int _dim)
+TPoint<Type>::TPoint()
 {
-	dim = _dim;
-	Vec.ReSize(_dim);
-	name.SetConstString("Point");
+	
+	std::cout << "input dim of first point" << std::endl;
 	std::cin >> Vec;
+	name.SetConstString("Point");
+	dim = Vec.GetLength();
 }
 
 template<class Type>
@@ -60,9 +60,9 @@ inline void TPoint<Type>::Plot()
 template<class Type>
 void TPoint<Type>::Print()
 {
+	std::cout << "name = " << name;
 	std::cout << "dim =" << dim << std::endl;
-	std::cout << Vec << std::endl;
-	std::cout << name << std::endl;
+	std::cout << "CoordOfPoint = " << Vec << std::endl;
 }
 
 template<class Type>

@@ -3,7 +3,7 @@
 
 
 template <class Type>
-class TSquare : TObj<Type>
+class TSquare : public TObj<Type>
 {
 protected:
 	int dim;

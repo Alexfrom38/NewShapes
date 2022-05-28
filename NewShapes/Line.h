@@ -49,7 +49,7 @@ inline TLine<Type>::~TLine()
 template<class Type>
 inline void TLine<Type>::Print()
 {
-	std::cout << "name = " << name << std::endl;
+	std::cout << "name = " << name;
 	std::cout << "FirstVector = " << FirstPoint << std::endl;
 	std::cout << "SecondVector = " << SecondPoint << std::endl;
 

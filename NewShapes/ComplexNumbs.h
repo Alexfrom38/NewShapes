@@ -38,4 +38,4 @@ public:
 	friend std::istream& operator >> (std::istream& stream, const TComplex& num);
 
 
-}; #pragma once
+};

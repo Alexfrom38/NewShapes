@@ -20,7 +20,6 @@ public:
 	virtual int GetDim();
 	virtual void SetName(const TString& _name);
 	virtual TString& GetName();
-
 	virtual TVector<Type>& operator [] (int i);//проверить
 };
 
@@ -91,7 +90,8 @@ inline TVector<Type>& TLine<Type>::operator[](int i)//проверить
 	case 1:
 		return SecondPoint;
 		break;
-	}
-	default throw "undefined behavior. You trying to get unexist cell of array";
 
+	default:
+		throw "undefined behavior. You trying to get unexist cell of array";
+	}
 }

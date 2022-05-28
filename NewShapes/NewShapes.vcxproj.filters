@@ -51,9 +51,6 @@
     <ClInclude Include="Triangle.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Source.h">
-      <Filter>Файлы заголовков\OtherHeaders</Filter>
-    </ClInclude>
     <ClInclude Include="Tetrahedron.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>

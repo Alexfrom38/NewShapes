@@ -4,14 +4,17 @@
 #include"Vector.h"
 #include"Printer.h"
 #include"ComplexNumbs.h"
-#include "Source.h"
+
 #include "Line.h"
 
 
 int main()
 {
 	
-	TLine<float> line();
+	TLine<float> line;
+	line.Print();
+	line.Plot();
+	
 	//TVector<int> A(2);
 	//TVector<int> B(2);
 

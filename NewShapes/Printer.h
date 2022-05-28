@@ -9,15 +9,23 @@ protected:
 
 	char board[61][121];
 public:
+	Printer();
 	void InsertPoint(const TVector<Type>& _vec1);
 	void InsertPoint(float x, float y);
 	void drawLine(Type x1, Type y1, Type x2, Type y2);
+	void InsertLine(float x1, float y1, float x2, float y2);//unsave func!!!!!
 	void InsertCircle(Type x0, Type y0, Type radius);
 	void ToPrint();
 	void clear();
 
 
 };
+
+template<class Type>
+inline Printer<Type>::Printer()
+{
+	clear();
+}
 
 template<class Type>
 inline void Printer<Type>::InsertPoint(const TVector<Type>& _vec1)
@@ -45,35 +53,6 @@ inline void Printer<Type>::InsertCircle(Type x, Type y, Type _radius)
 		}
 	}
 }
-//
-//template<class Type>
-//inline void Printer<Type>::InsertCircle(Type x0, Type y0, Type radius) {
-//	int x = 0;
-//	int y = radius;
-//	int delta = 1 - 2 * radius;
-//	int error = 0;
-//	while (y >= 0) {
-//		InsertPoint(x0 + x, y0 + y);
-//		InsertPoint(x0 + x, y0 - y);
-//		InsertPoint(x0 - x, y0 + y);
-//		InsertPoint(x0 - x, y0 - y);
-//		error = 2 * (delta + y) - 1;
-//		if (delta < 0 && error <= 0) {
-//			++x;
-//			delta += 2 * x + 1;
-//			continue;
-//		}
-//		error = 2 * (delta - x) - 1;
-//		if (delta > 0 && error > 0) {
-//			--y;
-//			delta += 1 - 2 * y;
-//			continue;
-//		}
-//		++x;
-//		delta += 2 * (x - y);
-//		--y;
-//	}
-//}
 
 
 template<class Type>
@@ -139,5 +118,38 @@ inline void Printer<Type>::drawLine(Type x1, Type y1, Type x2, Type y2)
 			y1 += signY;
 		}
 	}
+}
+template<class Type>
+inline void Printer<Type>::InsertLine(float x1, float y1, float x2, float y2) //unsave func!!!! 
+{
+	double xx1 = x1;
+	double xx2 = x2;
+	double yy1 = y1;
+	double yy2 = y2;
+
+		if (xx1 > xx2) {
+		float t = xx1; xx1 = xx2; xx2 = t;
+		t = yy1; yy1 = yy2; yy2 = t;
+	}
+	for (float t = xx1; t <= xx2; t += 0.1)
+	{
+		if (yy2 > yy1)
+			for (float m = yy1; m <= yy2; m += 0.1)
+			{
+				if (round((t - xx1) * (yy2 - yy1)) == round((m - yy1) * (xx2 - xx1)))
+				{
+					InsertPoint(round(t), round(m));
+				}
+			}
+		else
+			for (float m = yy2; m <= yy1; m += 0.1)
+			{
+				if (round((t - xx1) * (yy2 - yy1)) == round((m - yy1) * (xx2 - xx1)))
+				{
+					InsertPoint(round(t), round(m));
+				}
+			}
+	}
 
 }
+

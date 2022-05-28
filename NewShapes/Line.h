@@ -15,7 +15,7 @@ public:
 	Printer<Type> printer;
 	TLine();
 	~TLine();
-	TLine(const TLine& _line);
+	TLine(const TLine<Type>& _line);
 	virtual void Print();
 	virtual void Plot();
 	virtual int GetDim();
@@ -49,7 +49,7 @@ inline TLine<Type>::~TLine()
 }
 
 template<class Type>
-inline TLine<Type>::TLine(const TLine& _line)
+inline TLine<Type>::TLine(const TLine<Type>& _line)
 {
 	FirstPoint = _line.FirstPoint;
 	SecondPoint = _line.SecondPoint;

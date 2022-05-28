@@ -13,7 +13,7 @@ protected:
 public:
 	Printer<Type> printer;
 	TSquare();
-	TSquare(const TSquare& square);
+	TSquare(const TSquare<Type>& square);
 	~TSquare();
 	virtual void Print();
 	virtual void Plot();
@@ -42,7 +42,7 @@ inline TSquare<Type>::TSquare()
 }
 
 template<class Type>
-inline TSquare<Type>::TSquare(const TSquare& square)
+inline TSquare<Type>::TSquare(const TSquare<Type>& square)
 {
 	FirstPoint = square.FirstPoint;
 	SecondPoint = square.SecondPoint;

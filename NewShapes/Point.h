@@ -14,7 +14,7 @@ protected:
 	int dim;
 	TPoint(int _dim);
 	~TPoint();
-	TPoint(const TPoint& _point);
+	TPoint(const TPoint<Type>& _point);
 	Printer<Type> printer;
 public:
 	virtual void Plot();
@@ -43,7 +43,7 @@ inline TPoint<Type>::~TPoint()
 }
 
 template<class Type>
-inline TPoint<Type>::TPoint(const TPoint& _point)
+inline TPoint<Type>::TPoint(const TPoint<Type>& _point)
 {
 	name = _point.name;
 	Vec = _point.Vec;

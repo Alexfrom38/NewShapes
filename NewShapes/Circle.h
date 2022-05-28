@@ -11,8 +11,9 @@ private:
 	TString name;
 	Printer<Type> printer;
 public:
+	Type x, y, r;
 	TCircle(Type _radius);
-	TCircle(const TCircle& _circle);
+	TCircle(const TCircle<Type>& _circle);
 	~TCircle();
 	virtual void Print();
 	virtual void Plot();
@@ -32,10 +33,11 @@ inline TCircle<Type>::TCircle(Type _radius)
 	dim = point.GetLength();
 	name.SetConstString("circle");
 	radius = _radius;
+	x = 0; y = 0; z = 0;
 	}
 
 template<class Type>
-inline TCircle<Type>::TCircle(const TCircle& _circle)
+inline TCircle<Type>::TCircle(const TCircle<Type>& _circle)
 {
 
   point = _circle.point;
@@ -62,7 +64,10 @@ inline void TCircle<Type>::Print()
 template<class Type>
 inline void TCircle<Type>::Plot()
 {
-	printer.InsertCircle(point[1], point[0], radius);
+	x = point[0];
+	y = point[1];
+	r = radius;
+	printer.InsertCircle(x, y, r);
 	printer.ToPrint();
 }
 

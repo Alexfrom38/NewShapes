@@ -18,10 +18,18 @@ int main()
 	*/
 
 	//TSquare<int> square;
-	//square.Plot();
-	TCircle<float> circle(4);
-	circle.Print();
+	////square.Plot();
 
+
+	TCircle<float> circle(10);
+	circle.Print();
+	circle.Plot();
+
+
+
+	//Printer<float> printer;
+	//printer.InsertCircle(20, 30, 15);
+	//printer.ToPrint();
 
 
 	

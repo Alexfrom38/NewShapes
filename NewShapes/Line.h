@@ -44,6 +44,7 @@ inline TLine<Type>::TLine()
 template<class Type>
 inline TLine<Type>::~TLine()
 {
+
 }
 
 template<class Type>

@@ -10,7 +10,8 @@
 
 int main()
 {
-	TLine<int> A();
+	
+	TLine<float> line();
 	//TVector<int> A(2);
 	//TVector<int> B(2);
 

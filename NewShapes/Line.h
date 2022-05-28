@@ -21,7 +21,7 @@ public:
 	virtual void SetName(const TString& _name);
 	virtual TString& GetName();
 
-	virtual TVector<Type>& operator [] (int i);//переписать
+	virtual TVector<Type>& operator [] (int i);//проверить
 };
 
 template<class Type>
@@ -50,6 +50,10 @@ inline TLine<Type>::~TLine()
 template<class Type>
 inline void TLine<Type>::Print()
 {
+	std::cout << "name = " << name << std::endl;
+	std::cout << "FirstVector = " << FirstPoint << std::endl;
+	std::cout << "SecondVector = " << SecondPoint << std::endl;
+
 }
 
 template<class Type>
@@ -68,6 +72,7 @@ inline int TLine<Type>::GetDim()
 template<class Type>
 inline void TLine<Type>::SetName(const TString& _name)
 {
+	name = _name;
 }
 
 template<class Type>
@@ -77,7 +82,16 @@ inline TString& TLine<Type>::GetName()
 }
 
 template<class Type>
-inline TVector<Type>& TLine<Type>::operator[](int i)
+inline TVector<Type>& TLine<Type>::operator[](int i)//проверить
 {
-	return FirstPoint;
+	switch (i)
+	{
+	case 0:
+		return FirstPoint;
+	case 1:
+		return SecondPoint;
+		break;
+	}
+	default throw "undefined behavior. You trying to get unexist cell of array";
+
 }

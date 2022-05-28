@@ -12,7 +12,7 @@ public:
 	void InsertPoint(const TVector<Type>& _vec1);
 	void InsertPoint(float x, float y);
 	void drawLine(Type x1, Type y1, Type x2, Type y2);
-	void InsertCircle(Type x, Type y, Type _radius);
+	void InsertCircle(Type x0, Type y0, Type radius);
 	void ToPrint();
 	void clear();
 
@@ -45,6 +45,36 @@ inline void Printer<Type>::InsertCircle(Type x, Type y, Type _radius)
 		}
 	}
 }
+//
+//template<class Type>
+//inline void Printer<Type>::InsertCircle(Type x0, Type y0, Type radius) {
+//	int x = 0;
+//	int y = radius;
+//	int delta = 1 - 2 * radius;
+//	int error = 0;
+//	while (y >= 0) {
+//		InsertPoint(x0 + x, y0 + y);
+//		InsertPoint(x0 + x, y0 - y);
+//		InsertPoint(x0 - x, y0 + y);
+//		InsertPoint(x0 - x, y0 - y);
+//		error = 2 * (delta + y) - 1;
+//		if (delta < 0 && error <= 0) {
+//			++x;
+//			delta += 2 * x + 1;
+//			continue;
+//		}
+//		error = 2 * (delta - x) - 1;
+//		if (delta > 0 && error > 0) {
+//			--y;
+//			delta += 1 - 2 * y;
+//			continue;
+//		}
+//		++x;
+//		delta += 2 * (x - y);
+//		--y;
+//	}
+//}
+
 
 template<class Type>
 inline void Printer<Type>::ToPrint()

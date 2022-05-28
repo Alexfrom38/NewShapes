@@ -19,7 +19,8 @@ int main()
 
 	//TSquare<int> square;
 	//square.Plot();
-
+	TCircle<float> circle(4);
+	circle.Print();
 
 
 

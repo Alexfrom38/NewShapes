@@ -13,7 +13,7 @@ public:
 	~TTrinagle();
 	virtual void Print();
 	virtual void Plot();
-	virtual int GetDim(;
+	virtual int GetDim();
 	virtual void SetName(const TString& _name);
 	virtual TString& GetName();
 	virtual TVector<Type>& operator [] (int i);
@@ -44,6 +44,11 @@ inline TTrinagle<Type>::TTrinagle()
 template<class Type>
 inline TTrinagle<Type>::TTrinagle(const TTrinagle<Type>& q)
 {
+	name = q.name;
+	FirstPoint = q.FirstPoint;
+	SecondPoint = q.SecondPoint;
+	ThirdPoint = q.ThirdPoint;
+	dim = q.dim;
 }
 
 template<class Type>
@@ -64,6 +69,17 @@ inline void TTrinagle<Type>::Print()
 template<class Type>
 inline void TTrinagle<Type>::Plot()
 {
+	printer.drawLine(FirstPoint[1], FirstPoint[0], SecondPoint[1], SecondPoint[0]);
+	printer.drawLine(FirstPoint[1], FirstPoint[0], ThirdPoint[1], ThirdPoint[0]);
+	printer.drawLine(SecondPoint[1], SecondPoint[0], ThirdPoint[1], ThirdPoint[0]);
+	printer.ToPrint();
+
+}
+
+template<class Type>
+inline int TTrinagle<Type>::GetDim()
+{
+	return dim;
 }
 
 template<class Type>

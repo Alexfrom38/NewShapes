@@ -7,6 +7,7 @@
 #include "Line.h"
 #include"Square.h"
 #include"Circle.h"
+#include"Triangle.h"
 
 
 int main()
@@ -21,15 +22,14 @@ int main()
 	////square.Plot();
 
 
-	TCircle<float> circle(10);
-	circle.Print();
-	circle.Plot();
+	//TCircle<float> circle(10);
+	//circle.Print();
+	//circle.Plot();
+
+	TTrinagle<int> tri;
+	tri.Plot();
 
 
-
-	//Printer<float> printer;
-	//printer.InsertCircle(20, 30, 15);
-	//printer.ToPrint();
 
 
 	

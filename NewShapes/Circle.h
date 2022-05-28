@@ -33,7 +33,7 @@ inline TCircle<Type>::TCircle(Type _radius)
 	dim = point.GetLength();
 	name.SetConstString("circle");
 	radius = _radius;
-	x = 0; y = 0; z = 0;
+	x = 0; y = 0; r = 0;
 	}
 
 template<class Type>

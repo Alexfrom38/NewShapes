@@ -146,7 +146,6 @@
     <ClInclude Include="Printer.h" />
     <ClInclude Include="Square.h" />
     <ClInclude Include="String.h" />
-    <ClInclude Include="Tetrahedron.h" />
     <ClInclude Include="TObj.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vector.h" />

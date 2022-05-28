@@ -15,6 +15,7 @@ public:
 	Printer<Type> printer;
 	TLine();
 	~TLine();
+	TLine(const TLine& _line);
 	virtual void Print();
 	virtual void Plot();
 	virtual int GetDim();
@@ -48,9 +49,19 @@ inline TLine<Type>::~TLine()
 }
 
 template<class Type>
+inline TLine<Type>::TLine(const TLine& _line)
+{
+	FirstPoint = _line.FirstPoint;
+	SecondPoint = _line.SecondPoint;
+	dim = _line.dim;
+	name = _line.name;
+}
+
+template<class Type>
 inline void TLine<Type>::Print()
 {
 	std::cout << "name = " << name;
+	std::cout << "dim =" << dim << std::endl;
 	std::cout << "FirstVector = " << FirstPoint << std::endl;
 	std::cout << "SecondVector = " << SecondPoint << std::endl;
 

@@ -8,14 +8,15 @@
 template <class Type>
 class TPoint : public TObj<Type>
 {
-public:
+protected:
 	TString name;
 	TVector<Type> Vec;
 	int dim;
 	TPoint(int _dim);
 	~TPoint();
+	TPoint(const TPoint& _point);
 	Printer<Type> printer;
-
+public:
 	virtual void Plot();
 	virtual void Print();
 	virtual TVector<Type>& operator [](int i);
@@ -31,19 +32,22 @@ TPoint<Type>::TPoint(int _dim)
 {
 	dim = _dim;
 	Vec.ReSize(_dim);
-
-	name.SetConstString("qwerty");
-
-	for (int q = 0; q < _dim; q++)
-	{
-		Vec[q] = 5;
-	}
+	name.SetConstString("Point");
+	std::cin >> Vec;
 }
 
 template<class Type>
 inline TPoint<Type>::~TPoint()
 {
 
+}
+
+template<class Type>
+inline TPoint<Type>::TPoint(const TPoint& _point)
+{
+	name = _point.name;
+	Vec = _point.Vec;
+	dim = _point.dim;
 }
 
 template<class Type>
@@ -56,6 +60,7 @@ inline void TPoint<Type>::Plot()
 template<class Type>
 void TPoint<Type>::Print()
 {
+	std::cout << "dim =" << dim << std::endl;
 	std::cout << Vec << std::endl;
 	std::cout << name << std::endl;
 }

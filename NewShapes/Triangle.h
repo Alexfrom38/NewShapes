@@ -59,7 +59,6 @@ inline void TTrinagle<Type>::Print()
 	std::cout << "FirstVector = " << FirstPoint << std::endl;
 	std::cout << "SecondVector = " << SecondPoint << std::endl;
 	std::cout << "SecondVector = " << ThirdPoint << std::endl;
-
 }
 
 template<class Type>

@@ -18,7 +18,7 @@ public:
 
 	virtual void Plot();
 	virtual void Print();
-	virtual TVector<Type>& operator [](int i);//переписать
+	virtual TVector<Type>& operator [](int i);
 
 	virtual int GetDim();
 	virtual void SetName(const TString& _name);

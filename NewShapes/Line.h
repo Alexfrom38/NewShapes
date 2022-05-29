@@ -21,7 +21,7 @@ public:
 	virtual int GetDim();
 	virtual void SetName(const TString& _name);
 	virtual TString& GetName();
-	virtual TVector<Type>& operator [] (int i);//проверить
+	virtual TVector<Type>& operator [] (int i);
 };
 
 template<class Type>
@@ -60,6 +60,7 @@ inline TLine<Type>::TLine(const TLine<Type>& _line)
 template<class Type>
 inline void TLine<Type>::Print()
 {
+	std::cout << std::endl;
 	std::cout << "name = " << name;
 	std::cout << "dim =" << dim << std::endl;
 	std::cout << "FirstVector = " << FirstPoint << std::endl;
@@ -93,7 +94,7 @@ inline TString& TLine<Type>::GetName()
 }
 
 template<class Type>
-inline TVector<Type>& TLine<Type>::operator[](int i)//проверить
+inline TVector<Type>& TLine<Type>::operator[](int i)
 {
 	switch (i)
 	{

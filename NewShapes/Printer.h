@@ -13,12 +13,10 @@ public:
 	void InsertPoint(const TVector<Type>& _vec1);
 	void InsertPoint(float x, float y);
 	void drawLine(Type x1, Type y1, Type x2, Type y2);
-	void InsertLine(float x1, float y1, float x2, float y2);//unsave func!!!!!
+	void InsertLine(float x1, float y1, float x2, float y2);//my algorithm Brez
 	void InsertCircle(Type x0, Type y0, Type radius);
 	void ToPrint();
 	void clear();
-
-
 };
 
 template<class Type>
@@ -120,7 +118,7 @@ inline void Printer<Type>::drawLine(Type x1, Type y1, Type x2, Type y2)
 	}
 }
 template<class Type>
-inline void Printer<Type>::InsertLine(float x1, float y1, float x2, float y2) //unsave func!!!! 
+inline void Printer<Type>::InsertLine(float x1, float y1, float x2, float y2) //my algorithm Brez
 {
 	double xx1 = x1;
 	double xx2 = x2;

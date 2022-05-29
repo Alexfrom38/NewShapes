@@ -64,7 +64,7 @@ inline void TTrinagle<Type>::Print()
 	std::cout << "dim =" << dim << std::endl;
 	std::cout << "FirstVector = " << FirstPoint << std::endl;
 	std::cout << "SecondVector = " << SecondPoint << std::endl;
-	std::cout << "SecondVector = " << ThirdPoint << std::endl;
+	std::cout << "ThirdVector = " << ThirdPoint << std::endl;
 }
 
 template<class Type>

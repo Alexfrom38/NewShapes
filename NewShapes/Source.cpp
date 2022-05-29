@@ -9,39 +9,50 @@
 #include"Circle.h"
 #include"Triangle.h"
 #include"SetOfShapes.h"
+#include"Tetrahedron.h"
 
 int main()
 {
 	TSet<int> set;
-
-	/*TLine<int> line1;
-	TLine<int> line2;*/
-
-	//TLine<int> line;
-	//TSquare<int> A();
-	//TCircle<int>A(4);
-	TCircle<int>A(5);
-	TCircle<int>B(5);
-	TCircle<int>C(5);
-	set.SetObj(&A);
-	set.SetObj(&B);
-	set.SetObj(&C);
-	std::cout<<std::endl;
-	set.ToPlot(3);
-	
-	
-	//TSquare<int> square;
-	////square.Plot();
-
-
-	//TCircle<float> circle(10);
-	//circle.Print();
-	//circle.Plot();
-
-
-
+	TTetrahedron<int> tt;
+	TCircle<int> circle(10);
+	TLine<int>line;
+	set.SetObj(&tt);
+	set.SetObj(&circle);
+	set.SetObj(&line);
+	set.ToPrint();
+	set.ToPlot();
 
 
 	
 	return 0;
 }
+//coord for beauty shapes:
+/*
+TTetrahedron:
+2
+5
+5
+2
+40
+10
+2
+25
+25
+2
+14
+23
+Circle:
+3
+25
+25
+12
+Line:
+3
+5
+5
+40
+10
+
+
+*/

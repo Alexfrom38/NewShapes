@@ -4,6 +4,7 @@
 template <class Type>
 class Printer
 {
+	//this class can draw 2d shapes (overhead view)
 protected:
 	Type qwerty = 0;
 

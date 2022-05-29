@@ -12,7 +12,7 @@
 #include"Tetrahedron.h"
 
 int main()
-{
+{	//Printer class can draw 2d shapes (overhead view)
 	TSet<int> set;
 	TTetrahedron<int> tt;
 	TCircle<int> circle(10);
@@ -22,8 +22,6 @@ int main()
 	set.SetObj(&line);
 	set.ToPrint();
 	set.ToPlot();
-
-
 	
 	return 0;
 }
